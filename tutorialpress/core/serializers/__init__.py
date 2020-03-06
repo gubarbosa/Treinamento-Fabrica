@@ -1,0 +1,2 @@
+from tutorialpress.core.serializers.publicacao import PublicacaoSerializer
+from tutorialpress.core.serializers.categoria import CategoriaSerializer
