@@ -1,4 +1,4 @@
-from rest_framework import routers, serializers, viewsets
+from rest_framework import serializers, viewsets
 
 from tutorialpress.core.models import Publicacao
 
@@ -12,7 +12,3 @@ class PublicacaoSerializer(serializers.ModelSerializer):
 class PublicacaoViewSet(viewsets.ModelViewSet):
     queryset = Publicacao.objects.all()
     serializer_class = PublicacaoSerializer
-
-
-router = routers.SimpleRouter()
-router.register("publicacoes", PublicacaoViewSet)
