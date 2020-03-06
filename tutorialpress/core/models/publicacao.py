@@ -1,6 +1,6 @@
 from django.db import models
 
-from tutorialpress.core.models import Categoria
+from tutorialpress.core.models.categoria import Categoria
 
 
 class Publicacao(models.Model):
