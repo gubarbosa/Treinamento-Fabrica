@@ -35,3 +35,12 @@ def test_create_invalid(api_client):
 
     # E ENTÃO a categoria não deve existir no banco.
     assert Categoria.objects.count() == 0
+
+
+# @pytest.mark.django_db
+# def test_retrieve_valid(api_client):
+#     dados_categoria = {"id": 1}
+#     resp = api_client.get("categoria-detail", dados_categoria)
+#     assert resp.status_code == status.HTTP_200_OK
+#     assert isinstance(resp.data["id"], int)
+#     assert Categoria.objects.get(pk=resp.data["id"]).nome == dados_categoria["nome"]
