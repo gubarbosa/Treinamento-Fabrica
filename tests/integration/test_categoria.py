@@ -13,7 +13,7 @@ def test_create_valid(api_client):
     # QUANDO a API é chamada para criar uma categoria.
     resp = api_client.post(reverse("categoria-list"), dados_categoria)
 
-    # ENTÃO a reposta de sucesso deve conter os dados da categoria
+    # ENTÃO a resposta de sucesso deve conter os dados da categoria
     assert resp.status_code == status.HTTP_201_CREATED
     assert isinstance(resp.data["id"], int)
 
@@ -42,5 +42,16 @@ def test_retrieve_valid(api_client):
     categoria = Categoria.objects.create(nome="categoria1")
     resp = api_client.get(reverse("categoria-detail", args={categoria.id}))
     assert resp.status_code == status.HTTP_200_OK
-    # assert isinstance(resp.data["id"], int)
-    # assert resp.data["nome"] == "Categoria A"
+
+
+# @pytest.mark.django_db
+# def test_update(api_client):
+#     categoria = Categoria.objects.update(nome="categoria1")
+#     resp = api_client.put(reverse("categoria-detail", args={categoria.id}))
+#     assert resp.status_code == status.HTTP_200_OK
+
+# @pytest.mark.django_db
+# def test_delete(api_client):
+#     categoria = Categoria.objects.create(nome="categoria1")
+#     resp = api_client.delete(reverse("categoria-detail", args={categoria.id}))
+#     assert resp.status_code == status.HTTP_200_OK
