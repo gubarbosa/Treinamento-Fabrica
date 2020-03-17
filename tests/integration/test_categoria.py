@@ -55,3 +55,6 @@ def test_retrieve_valid(api_client):
 #     categoria = Categoria.objects.create(nome="categoria1")
 #     resp = api_client.delete(reverse("categoria-detail", args={categoria.id}))
 #     assert resp.status_code == status.HTTP_200_OK
+
+@pytest.mark.django_db
+batatapodre
